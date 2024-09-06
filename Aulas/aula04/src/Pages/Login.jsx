@@ -3,20 +3,21 @@ import Logo from '../components/Logo';
 import Titulo from '../components/Titulo';
 import InputEmail from '../components/InputEmail';
 import InputSenha from'../components/InputSenha';
-import BotaoEntrar from '../components/BotaoEntrar';
-import Link from'../components/Link';
+import Botao from '../components/Botao';
+import Conteudo from'../components/Conteudo';
+import Link from '../components/Link';
 
 function Login(){
 return (
 <>
-  <main>
-    <Logo />
-    <Titulo />
+  <Conteudo>
+    <Logo imagem="https://www.svgrepo.com/show/411955/learn.svg" texto="Logo da Aplicação"/>
+    <Titulo texto="Aluno Online"/>
     <InputEmail />
     <InputSenha />
-    <BotaoEntrar />
-    <Link />
-  </main>
+    <Botao texto= "Entrar" />
+    <Link  texto="Esqueceu a Senha?" />
+  </Conteudo>
   <Rodape />
 </>
 );
