@@ -1,7 +1,8 @@
 function Conteudo(props) {
-    return(
+    return (
         <main>{props.children}</main>
     );
-}
-
-export default Conteudo;
+  }
+  
+  export default Conteudo;
+  

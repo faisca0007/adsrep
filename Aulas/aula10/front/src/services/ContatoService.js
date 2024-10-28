@@ -1,32 +1,51 @@
-import axios from 'axios';
+import axios from "axios";
 
-
-const uti = import.meta.env.API_URL;
+const url = import.meta.env.VITE_API_URL;
 
 function buscarTodos() {
-
-
+  return axios
+    .get(url)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
 function buscar(id) {
+  return axios
+  .get(`${url}/${id}`)
+  .then()
+  .catch((error) => {
+    
+
+  }
 
 }
 
- function adicionar(contato) {
-    return axios
+function adicionar(contato) {
+  return axios
     .post(url, contato)
     .then((response) => {
-        return{sucesso:true, dados: response.data}})   // sucesso dados
+      return { sucesso: true, dados: response.data };
+    })
     .catch((error) => {
-        return{sucesso: false, mensagem: error.message}}); // deuruim mensagem
-        };
-
-function atualizar(contato){
-
+      return { sucesso: false, mensagem: error.message };
+    });
 }
+
+function atualizar(contato) {}
 
 function remover(id) {
-
+  return axios
+    .delete(`${url}/${id}`) // http://localhost:3000/contados/1a2b
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
-export { buscarTodos, buscar, adicionar, atualizar, remover }
+export { buscarTodos, buscar, adicionar, atualizar, remover };
